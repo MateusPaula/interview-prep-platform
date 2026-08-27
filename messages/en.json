@@ -1,0 +1,52 @@
+{
+  "common": {
+    "appName": "Interview Prep Platform",
+    "loading": "Loading…",
+    "error": "Something went wrong",
+    "retry": "Retry",
+    "save": "Save",
+    "cancel": "Cancel",
+    "submit": "Submit"
+  },
+  "nav": {
+    "dailyChallenge": "Daily Challenge",
+    "behavioral": "Behavioral",
+    "progress": "Progress",
+    "signIn": "Sign in",
+    "signOut": "Sign out"
+  },
+  "challenge": {
+    "title": "Daily Coding Challenge",
+    "difficulty": "Difficulty",
+    "topic": "Topic",
+    "timer": "Time remaining",
+    "requestHint": "Get a hint",
+    "hintLevel": "Hint {level} of 3",
+    "markSolved": "I solved it",
+    "giveUp": "Give up"
+  },
+  "behavioral": {
+    "title": "Behavioral Practice",
+    "yourAnswer": "Your answer",
+    "getFeedback": "Get feedback",
+    "strengths": "Strengths",
+    "improvements": "Improvements",
+    "overallScore": "Overall score"
+  },
+  "progress": {
+    "title": "Your Progress",
+    "weakAreas": "Weak areas",
+    "confidence": "Confidence over time",
+    "earliest": "Earliest",
+    "latest": "Latest",
+    "attempts": "{count} attempts"
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Password",
+    "signIn": "Sign in",
+    "signUp": "Sign up",
+    "signOut": "Sign out",
+    "invalidCredentials": "Invalid email or password"
+  }
+}

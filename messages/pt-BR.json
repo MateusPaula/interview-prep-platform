@@ -1,0 +1,52 @@
+{
+  "common": {
+    "appName": "Plataforma de Preparação para Entrevistas",
+    "loading": "Carregando…",
+    "error": "Algo deu errado",
+    "retry": "Tentar novamente",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "submit": "Enviar"
+  },
+  "nav": {
+    "dailyChallenge": "Desafio Diário",
+    "behavioral": "Comportamental",
+    "progress": "Progresso",
+    "signIn": "Entrar",
+    "signOut": "Sair"
+  },
+  "challenge": {
+    "title": "Desafio de Código Diário",
+    "difficulty": "Dificuldade",
+    "topic": "Tópico",
+    "timer": "Tempo restante",
+    "requestHint": "Pedir uma dica",
+    "hintLevel": "Dica {level} de 3",
+    "markSolved": "Resolvi",
+    "giveUp": "Desistir"
+  },
+  "behavioral": {
+    "title": "Prática Comportamental",
+    "yourAnswer": "Sua resposta",
+    "getFeedback": "Receber feedback",
+    "strengths": "Pontos fortes",
+    "improvements": "Melhorias",
+    "overallScore": "Pontuação geral"
+  },
+  "progress": {
+    "title": "Seu Progresso",
+    "weakAreas": "Áreas fracas",
+    "confidence": "Confiança ao longo do tempo",
+    "earliest": "Primeira",
+    "latest": "Mais recente",
+    "attempts": "{count} tentativas"
+  },
+  "auth": {
+    "email": "E-mail",
+    "password": "Senha",
+    "signIn": "Entrar",
+    "signUp": "Cadastrar",
+    "signOut": "Sair",
+    "invalidCredentials": "E-mail ou senha inválidos"
+  }
+}
