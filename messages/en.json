@@ -3,50 +3,212 @@
     "appName": "Interview Prep Platform",
     "loading": "Loading…",
     "error": "Something went wrong",
+    "errorBody": "We could not load this data. Give it another try.",
     "retry": "Retry",
     "save": "Save",
     "cancel": "Cancel",
-    "submit": "Submit"
+    "submit": "Submit",
+    "minutes": "{count} min",
+    "topics": {
+      "arrays": "Arrays",
+      "strings": "Strings",
+      "hash-maps": "Hash Maps",
+      "two-pointers": "Two Pointers",
+      "sliding-window": "Sliding Window",
+      "stacks-queues": "Stacks & Queues",
+      "linked-lists": "Linked Lists",
+      "trees": "Trees",
+      "graphs": "Graphs",
+      "binary-search": "Binary Search",
+      "recursion-backtracking": "Recursion & Backtracking",
+      "dynamic-programming": "Dynamic Programming"
+    },
+    "difficulty": {
+      "easy": "Easy",
+      "medium": "Medium",
+      "hard": "Hard"
+    },
+    "notFound": {
+      "title": "Page not found",
+      "body": "The page you are looking for does not exist or has moved.",
+      "cta": "Back to dashboard"
+    },
+    "errorBoundary": {
+      "title": "Something broke",
+      "body": "An unexpected error interrupted this page. Your progress data is safe.",
+      "retry": "Try again"
+    }
   },
   "nav": {
+    "dashboard": "Dashboard",
     "dailyChallenge": "Daily Challenge",
     "behavioral": "Behavioral",
     "progress": "Progress",
     "signIn": "Sign in",
-    "signOut": "Sign out"
+    "signOut": "Sign out",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "localeSwitcherLabel": "Language"
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Password",
+    "emailPlaceholder": "you@example.com",
+    "passwordPlaceholder": "At least 8 characters",
+    "signIn": "Sign in",
+    "signUp": "Create account",
+    "signOut": "Sign out",
+    "signInTitle": "Welcome back",
+    "signInSubtitle": "Sign in to continue your interview practice.",
+    "signUpTitle": "Create your account",
+    "signUpSubtitle": "Start practicing with daily challenges and AI feedback.",
+    "signingIn": "Signing in…",
+    "signingUp": "Creating account…",
+    "noAccount": "No account yet?",
+    "haveAccount": "Already have an account?",
+    "emailRequired": "Enter your email",
+    "emailInvalid": "That does not look like a valid email",
+    "passwordRequired": "Enter your password",
+    "passwordTooShort": "Password must be at least 8 characters",
+    "invalidCredentials": "Invalid email or password",
+    "signUpFailed": "Could not create the account. Try a different email.",
+    "confirmEmailNotice": "Check your inbox to confirm your email, then sign in.",
+    "genericError": "Authentication failed. Please try again.",
+    "brandHeadline": "Ship your next interview",
+    "brandBody": "One focused coding challenge a day, an interview-pressure timer, escalating AI hints, and STAR feedback on your behavioral answers.",
+    "brandFeatureDaily": "A curated challenge every day",
+    "brandFeatureTimer": "Real interview time pressure",
+    "brandFeatureFeedback": "AI mentor hints and STAR feedback"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Your prep at a glance",
+    "todaysChallenge": "Today's challenge",
+    "timeBudget": "Time budget",
+    "startChallenge": "Start challenge",
+    "weakAreas": "Weak areas",
+    "weakAreasEmpty": "No attempts yet. Weak areas appear after your first challenges.",
+    "weakAreasHint": "Weakness score, weighted by hints and give-ups",
+    "viewProgress": "View progress",
+    "confidenceTitle": "Confidence snapshot",
+    "confidenceEmpty": "You have not rated your confidence yet.",
+    "confidenceCta": "Rate your topics",
+    "confidenceTrend": "{count, plural, one {# topic tracked} other {# topics tracked}}",
+    "behavioralTitle": "Behavioral practice",
+    "behavioralBody": "Practice STAR answers to real interview questions and get scored feedback.",
+    "behavioralCta": "Practice a question",
+    "attemptCount": "{count, plural, one {# attempt} other {# attempts}}"
   },
   "challenge": {
     "title": "Daily Coding Challenge",
     "difficulty": "Difficulty",
     "topic": "Topic",
     "timer": "Time remaining",
+    "start": "Start timer",
+    "pause": "Pause",
+    "resume": "Resume",
+    "timeUp": "Time is up — wrap up your attempt",
+    "editorLoading": "Loading editor…",
+    "problemStatement": "Problem",
     "requestHint": "Get a hint",
     "hintLevel": "Hint {level} of 3",
     "markSolved": "I solved it",
-    "giveUp": "Give up"
+    "giveUp": "Give up",
+    "hints": {
+      "title": "AI mentor hints",
+      "used": "{used} of {total} used",
+      "level1": "Nudge",
+      "level2": "Approach",
+      "level3": "Key insight",
+      "reveal": "Reveal hint {level}",
+      "locked": "Use hint {previous} first",
+      "loading": "Asking the mentor…",
+      "aiUnavailable": "The AI mentor is unavailable right now. Your code is untouched — try again in a moment.",
+      "genericError": "Could not fetch that hint. Try again."
+    },
+    "submitPanel": {
+      "prompt": "How did it go?",
+      "solved": "I solved it",
+      "solvedHelp": "Counts as solved with hints if you used any",
+      "gaveUp": "I gave up",
+      "gaveUpHelp": "Honest give-ups sharpen your weak-area map",
+      "record": "Record attempt",
+      "recording": "Recording…",
+      "error": "Could not record the attempt. Try again."
+    },
+    "result": {
+      "solvedTitle": "Solved. Great work.",
+      "solvedBody": "Clean solve, no hints. That is exactly the interview standard.",
+      "solvedWithHintsTitle": "Solved with a little help",
+      "solvedWithHintsBody": "You got there — review the hints you used so next time you will not need them.",
+      "gaveUpTitle": "Logged. Tomorrow is another rep.",
+      "gaveUpBody": "Giving up honestly beats guessing. This topic now ranks higher in your weak areas.",
+      "recordedHeading": "What we recorded",
+      "outcome": "Outcome",
+      "timeSpent": "Time spent",
+      "hintsUsed": "Hints used",
+      "outcomes": {
+        "solved": "Solved",
+        "solved_with_hints": "Solved with hints",
+        "gave_up": "Gave up"
+      },
+      "backToDashboard": "Back to dashboard",
+      "viewProgress": "View progress"
+    }
   },
   "behavioral": {
     "title": "Behavioral Practice",
+    "subtitle": "Answer with the STAR method: Situation, Task, Action, Result.",
     "yourAnswer": "Your answer",
+    "answerPlaceholder": "Describe the situation, your task, the actions you took, and the result…",
+    "minLengthGuidance": "{remaining, plural, one {# more character for meaningful feedback} other {# more characters for meaningful feedback}}",
+    "lengthReady": "Good length — ready for feedback",
     "getFeedback": "Get feedback",
+    "gettingFeedback": "Scoring your answer…",
     "strengths": "Strengths",
     "improvements": "Improvements",
-    "overallScore": "Overall score"
+    "overallScore": "Overall score",
+    "scoreUnit": "out of 5",
+    "nextQuestion": "Next question",
+    "categories": {
+      "teamwork": "Teamwork",
+      "leadership": "Leadership",
+      "conflict": "Conflict",
+      "failure": "Failure",
+      "growth": "Growth"
+    },
+    "criteria": {
+      "situation": "Situation",
+      "task": "Task",
+      "action": "Action",
+      "result": "Result"
+    },
+    "aiUnavailable": "The AI mentor is unavailable right now. Your answer is preserved — try again in a moment.",
+    "feedbackError": "Could not score the answer. Try again."
   },
   "progress": {
     "title": "Your Progress",
+    "subtitle": "Confidence growth, weak areas, and honest self-ratings.",
     "weakAreas": "Weak areas",
+    "weakAreasHint": "Ranked weakest first — score blends hints and give-ups",
     "confidence": "Confidence over time",
+    "confidenceHint": "Earliest vs latest self-rating per topic",
     "earliest": "Earliest",
     "latest": "Latest",
-    "attempts": "{count} attempts"
-  },
-  "auth": {
-    "email": "Email",
-    "password": "Password",
-    "signIn": "Sign in",
-    "signUp": "Sign up",
-    "signOut": "Sign out",
-    "invalidCredentials": "Invalid email or password"
+    "attempts": "{count, plural, one {# attempt} other {# attempts}}",
+    "weaknessScore": "Weakness {score}",
+    "noAttemptsTitle": "No attempts yet",
+    "noAttemptsBody": "Solve your first daily challenge and your weak-area map will build itself.",
+    "goToChallenge": "Go to today's challenge",
+    "noConfidenceTitle": "No ratings yet",
+    "noConfidenceBody": "Rate your confidence below and watch the radar fill in over time.",
+    "tracker": {
+      "title": "Confidence tracker",
+      "subtitle": "How confident do you feel in each topic right now? 1 is shaky, 5 is interview-ready.",
+      "saved": "Saved",
+      "saving": "Saving…",
+      "error": "Could not save that rating. Try again.",
+      "levelLabel": "Rate {topic} as {level} of 5"
+    }
   }
 }
