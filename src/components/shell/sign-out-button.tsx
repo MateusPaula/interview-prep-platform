@@ -4,6 +4,8 @@ import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { createSupabaseBrowserClient } from "@/infrastructure/supabase/browser-client";
 import { useRouter } from "@/i18n/navigation";
+import { useChallengeSessionStore } from "@/stores/challenge-session-store";
+import { useTimerStore } from "@/stores/timer-store";
 
 export function SignOutButton() {
   const t = useTranslations("nav");
@@ -15,6 +17,8 @@ export function SignOutButton() {
     try {
       const supabase = createSupabaseBrowserClient();
       await supabase.auth.signOut();
+      useChallengeSessionStore.getState().clear();
+      useTimerStore.getState().reset();
       router.replace("/login");
       router.refresh();
     } finally {

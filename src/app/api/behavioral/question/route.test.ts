@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { BehavioralQuestion } from "@/core/domain";
 import { getRequestContext } from "@/app/api/composition";
-import { fakeContext } from "@/app/api/testing/fake-context";
+import { fakeContext } from "@/testing/fake-context";
 import { GET } from "./route";
 
 vi.mock("@/app/api/composition", () => ({

@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { Attempt, Challenge, NewAttempt } from "@/core/domain";
 import { getRequestContext } from "@/app/api/composition";
-import { fakeContext } from "@/app/api/testing/fake-context";
+import { fakeContext } from "@/testing/fake-context";
 import { POST } from "./route";
 
 vi.mock("@/app/api/composition", () => ({
@@ -135,6 +135,41 @@ describe("POST /api/attempts", () => {
       );
       expect(response.status).toBe(400);
     }
+  });
+
+  it("accepts the hintsUsed and timeSpentSeconds boundaries", async () => {
+    for (const hintsUsed of [0, 3]) {
+      const store: NewAttempt[] = [];
+      mockedContext.mockResolvedValue(contextWithStore(store));
+      const response = await POST(
+        post({
+          challengeId: "ch-2",
+          outcome: "gave_up",
+          hintsUsed,
+          timeSpentSeconds: 0,
+        }),
+      );
+      expect(response.status).toBe(201);
+      expect(store[0].hintsUsed).toBe(hintsUsed);
+      expect(store[0].timeSpentSeconds).toBe(0);
+    }
+  });
+
+  it("rejects a JSON array body", async () => {
+    mockedContext.mockResolvedValue(contextWithStore([]));
+    const response = await POST(
+      post([
+        {
+          challengeId: "ch-2",
+          outcome: "solved",
+          hintsUsed: 0,
+          timeSpentSeconds: 60,
+        },
+      ]),
+    );
+    expect(response.status).toBe(400);
+    const body = await response.json();
+    expect(body.error.code).toBe("invalid_request");
   });
 
   it("rejects a missing challengeId", async () => {

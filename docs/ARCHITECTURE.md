@@ -1,6 +1,6 @@
 # Architecture
 
-Interview Prep Platform: daily coding challenges with AI hints, an interview timer, weak-area tracking, behavioral practice with STAR feedback, and a confidence tracker. Next.js App Router, TypeScript strict, Supabase, OpenAI, next-intl (en default, pt-BR).
+Interview Prep Platform: daily coding challenges with AI hints, an interview timer, weak-area tracking, behavioral practice with STAR feedback, and a confidence tracker. Next.js App Router, TypeScript strict, Supabase, OpenRouter, next-intl (en default, pt-BR).
 
 ## Layers and the dependency rule
 
@@ -8,7 +8,7 @@ Interview Prep Platform: daily coding challenges with AI hints, an interview tim
 src/core/domain          entities, value objects, enums, pure functions
 src/core/contracts       API request/response DTOs (depend on domain only)
 src/core/application     use cases; ports/ holds the interfaces they depend on
-src/infrastructure       Supabase + OpenAI adapters implementing the ports
+src/infrastructure       Supabase + OpenRouter adapters implementing the ports
 src/app/api              route handlers (compose use cases + adapters)
 src/app/[locale]         pages; src/components, src/hooks, src/stores
 ```
@@ -20,7 +20,7 @@ Dependencies point inward only:
 - `core/application` use cases import domain + ports. Never infrastructure.
 - `src/infrastructure` implements ports; imports domain, ports, and vendor SDKs.
 - `src/app/api` wires use cases to adapters and speaks `core/contracts` on the wire.
-- Frontend (`src/app/[locale]`, components, hooks, stores) imports domain types, contracts, and its own modules. Never infrastructure or application.
+- Frontend (`src/app/[locale]`, components, hooks, stores) imports domain types, contracts, and its own modules. Never application, and never infrastructure except the sanctioned auth seam: `src/infrastructure/supabase/browser-client.ts` and `server-client.ts`, because Supabase authentication is intentionally client-driven and has no API route.
 
 Anything in `core/` is framework-free: no Next.js, Supabase, OpenAI, or React imports.
 
@@ -52,7 +52,7 @@ Endpoint semantics:
 
 - **GET /api/challenges/daily** — compute `dayKey` with `toDayKey(new Date())` (UTC calendar day), load the bank via `ChallengeRepository.listAll()`, pick with `selectDailyChallenge(bank, dayKey)`. Same day always yields the same challenge. The response includes `dayKey` so the client caches per server day, not per client-local day.
 - **POST /api/attempts** — validate `outcome` (`isAttemptOutcome`), `hintsUsed` (integer 0–3), `timeSpentSeconds` (integer ≥ 0); resolve the challenge by `challengeId` (404 if missing); copy its `topic` and `difficulty` onto the attempt server-side; persist with the session user id. Clients never send `userId`, `topic`, or `difficulty`.
-- **POST /api/hints** — validate `level` with `isHintLevel`; resolve the challenge; call `AiMentorGateway.generateHint({ challenge, userCode, level })`. Levels escalate: 1 subtle nudge, 2 algorithm/approach hint, 3 key insight. The gateway prompt must forbid returning full solutions or complete code. OpenAI failures map to `ai_unavailable`.
+- **POST /api/hints** — validate `level` with `isHintLevel`; resolve the challenge; call `AiMentorGateway.generateHint({ challenge, userCode, level })`. Levels escalate: 1 subtle nudge, 2 algorithm/approach hint, 3 key insight. The gateway prompt must forbid returning full solutions or complete code. OpenRouter failures map to `ai_unavailable`.
 - **GET /api/confidence** — all confidence ratings for the session user (append-only history).
 - **POST /api/confidence** — validate with `isTopic` and `isConfidenceLevel`; insert a new rating row (never update; history is the data).
 - **GET /api/progress** — `weakAreas: rankWeakAreas(attempts)` and `confidence: compareConfidenceByTopic(ratings)` for the session user.
@@ -140,8 +140,8 @@ Read env **only inside request handlers or factory functions** — never at modu
 | ------------------------------- | ---------------------------------------------- |
 | `NEXT_PUBLIC_SUPABASE_URL`      | browser + server Supabase clients              |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | browser + server Supabase clients              |
-| `OPENAI_API_KEY`                | OpenAI adapter (server only)                   |
-| `OPENAI_MODEL`                  | OpenAI adapter; falls back to `gpt-4o` if unset |
+| `OPENROUTER_API_KEY`            | OpenRouter adapter (server only)               |
+| `OPENROUTER_MODEL`              | OpenRouter adapter; falls back to `openai/gpt-4o` if unset |
 
 ## i18n
 

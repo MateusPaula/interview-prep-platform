@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { Challenge } from "@/core/domain";
 import { selectDailyChallenge } from "@/core/domain";
 import { getRequestContext } from "@/app/api/composition";
-import { fakeContext } from "@/app/api/testing/fake-context";
+import { fakeContext } from "@/testing/fake-context";
 import { GET } from "./route";
 
 vi.mock("@/app/api/composition", () => ({
@@ -60,6 +60,17 @@ describe("GET /api/challenges/daily", () => {
     expect(await response.json()).toEqual({
       dayKey: "2026-08-27",
       challenge: selectDailyChallenge(bank, "2026-08-27"),
+    });
+  });
+
+  it("returns a contract-shaped 500 when the context factory fails", async () => {
+    mockedContext.mockRejectedValue(
+      new Error("Missing Supabase environment configuration"),
+    );
+    const response = await GET();
+    expect(response.status).toBe(500);
+    expect(await response.json()).toEqual({
+      error: { code: "internal_error", message: "Something went wrong" },
     });
   });
 

@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { getTimerPressure, useTimerStore } from "./timer-store";
+import { formatClock, getTimerPressure, useTimerStore } from "./timer-store";
 
 describe("timer store", () => {
   beforeEach(() => {
@@ -86,6 +86,16 @@ describe("timer store", () => {
     vi.advanceTimersByTime(5000);
     expect(useTimerStore.getState().remainingSeconds).toBe(50);
     expect(useTimerStore.getState().status).toBe("idle");
+  });
+});
+
+describe("formatClock", () => {
+  it("pads minutes and seconds to two digits", () => {
+    expect(formatClock(0)).toBe("00:00");
+    expect(formatClock(59)).toBe("00:59");
+    expect(formatClock(61)).toBe("01:01");
+    expect(formatClock(1200)).toBe("20:00");
+    expect(formatClock(3000)).toBe("50:00");
   });
 });
 

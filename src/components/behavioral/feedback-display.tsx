@@ -57,9 +57,9 @@ export function FeedbackDisplay({ feedback }: FeedbackDisplayProps) {
             {t("strengths")}
           </h3>
           <ul className="mt-3 flex flex-col gap-2">
-            {feedback.strengths.map((strength) => (
+            {feedback.strengths.map((strength, index) => (
               <li
-                key={strength}
+                key={`${index}-${strength}`}
                 className="text-sm leading-relaxed text-ink-secondary"
               >
                 {strength}
@@ -73,9 +73,9 @@ export function FeedbackDisplay({ feedback }: FeedbackDisplayProps) {
             {t("improvements")}
           </h3>
           <ul className="mt-3 flex flex-col gap-2">
-            {feedback.improvements.map((improvement) => (
+            {feedback.improvements.map((improvement, index) => (
               <li
-                key={improvement}
+                key={`${index}-${improvement}`}
                 className="text-sm leading-relaxed text-ink-secondary"
               >
                 {improvement}
