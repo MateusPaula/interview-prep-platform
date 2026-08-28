@@ -27,7 +27,8 @@ $md$, $ts$
 export function twoSum(nums: number[], target: number): [number, number] {
   return [-1, -1];
 }
-$ts$);
+$ts$)
+on conflict (title) do nothing;
 
 insert into public.challenges (title, topic, difficulty, prompt, starter_code) values
 ('Merge Intervals', 'arrays', 'medium', $md$
@@ -60,7 +61,8 @@ export function mergeIntervals(
 ): Array<[number, number]> {
   return [];
 }
-$ts$);
+$ts$)
+on conflict (title) do nothing;
 
 insert into public.challenges (title, topic, difficulty, prompt, starter_code) values
 ('Valid Anagram', 'strings', 'easy', $md$
@@ -90,7 +92,8 @@ $md$, $ts$
 export function isAnagram(s: string, t: string): boolean {
   return false;
 }
-$ts$);
+$ts$)
+on conflict (title) do nothing;
 
 insert into public.challenges (title, topic, difficulty, prompt, starter_code) values
 ('Group Anagrams', 'strings', 'medium', $md$
@@ -121,7 +124,8 @@ $md$, $ts$
 export function groupAnagrams(words: string[]): string[][] {
   return [];
 }
-$ts$);
+$ts$)
+on conflict (title) do nothing;
 
 insert into public.challenges (title, topic, difficulty, prompt, starter_code) values
 ('First Unique Character', 'hash-maps', 'easy', $md$
@@ -151,7 +155,8 @@ $md$, $ts$
 export function firstUniqueChar(s: string): number {
   return -1;
 }
-$ts$);
+$ts$)
+on conflict (title) do nothing;
 
 insert into public.challenges (title, topic, difficulty, prompt, starter_code) values
 ('Substring with Concatenation of All Words', 'hash-maps', 'hard', $md$
@@ -183,7 +188,8 @@ $md$, $ts$
 export function findSubstring(s: string, words: string[]): number[] {
   return [];
 }
-$ts$);
+$ts$)
+on conflict (title) do nothing;
 
 insert into public.challenges (title, topic, difficulty, prompt, starter_code) values
 ('Valid Palindrome', 'two-pointers', 'easy', $md$
@@ -213,7 +219,8 @@ $md$, $ts$
 export function isPalindrome(s: string): boolean {
   return false;
 }
-$ts$);
+$ts$)
+on conflict (title) do nothing;
 
 insert into public.challenges (title, topic, difficulty, prompt, starter_code) values
 ('Container With Most Water', 'two-pointers', 'medium', $md$
@@ -243,7 +250,8 @@ $md$, $ts$
 export function maxArea(heights: number[]): number {
   return 0;
 }
-$ts$);
+$ts$)
+on conflict (title) do nothing;
 
 insert into public.challenges (title, topic, difficulty, prompt, starter_code) values
 ('Longest Substring Without Repeating Characters', 'sliding-window', 'medium', $md$
@@ -273,7 +281,8 @@ $md$, $ts$
 export function lengthOfLongestSubstring(s: string): number {
   return 0;
 }
-$ts$);
+$ts$)
+on conflict (title) do nothing;
 
 insert into public.challenges (title, topic, difficulty, prompt, starter_code) values
 ('Minimum Window Substring', 'sliding-window', 'hard', $md$
@@ -303,7 +312,8 @@ $md$, $ts$
 export function minWindow(s: string, t: string): string {
   return "";
 }
-$ts$);
+$ts$)
+on conflict (title) do nothing;
 
 insert into public.challenges (title, topic, difficulty, prompt, starter_code) values
 ('Valid Parentheses', 'stacks-queues', 'easy', $md$
@@ -333,7 +343,8 @@ $md$, $ts$
 export function isValidParentheses(s: string): boolean {
   return false;
 }
-$ts$);
+$ts$)
+on conflict (title) do nothing;
 
 insert into public.challenges (title, topic, difficulty, prompt, starter_code) values
 ('Daily Temperatures', 'stacks-queues', 'medium', $md$
@@ -363,7 +374,8 @@ $md$, $ts$
 export function dailyTemperatures(temperatures: number[]): number[] {
   return [];
 }
-$ts$);
+$ts$)
+on conflict (title) do nothing;
 
 insert into public.challenges (title, topic, difficulty, prompt, starter_code) values
 ('Reverse Linked List', 'linked-lists', 'easy', $md$
@@ -399,7 +411,8 @@ export interface ListNode {
 export function reverseList(head: ListNode | null): ListNode | null {
   return null;
 }
-$ts$);
+$ts$)
+on conflict (title) do nothing;
 
 insert into public.challenges (title, topic, difficulty, prompt, starter_code) values
 ('Merge K Sorted Lists', 'linked-lists', 'hard', $md$
@@ -435,7 +448,8 @@ export interface ListNode {
 export function mergeKLists(lists: Array<ListNode | null>): ListNode | null {
   return null;
 }
-$ts$);
+$ts$)
+on conflict (title) do nothing;
 
 insert into public.challenges (title, topic, difficulty, prompt, starter_code) values
 ('Maximum Depth of Binary Tree', 'trees', 'easy', $md$
@@ -471,7 +485,8 @@ export interface TreeNode {
 export function maxDepth(root: TreeNode | null): number {
   return 0;
 }
-$ts$);
+$ts$)
+on conflict (title) do nothing;
 
 insert into public.challenges (title, topic, difficulty, prompt, starter_code) values
 ('Binary Tree Maximum Path Sum', 'trees', 'hard', $md$
@@ -507,7 +522,8 @@ export interface TreeNode {
 export function maxPathSum(root: TreeNode): number {
   return 0;
 }
-$ts$);
+$ts$)
+on conflict (title) do nothing;
 
 insert into public.challenges (title, topic, difficulty, prompt, starter_code) values
 ('Course Schedule', 'graphs', 'medium', $md$
@@ -541,7 +557,8 @@ export function canFinish(
 ): boolean {
   return false;
 }
-$ts$);
+$ts$)
+on conflict (title) do nothing;
 
 insert into public.challenges (title, topic, difficulty, prompt, starter_code) values
 ('Word Ladder', 'graphs', 'hard', $md$
@@ -576,7 +593,8 @@ export function ladderLength(
 ): number {
   return 0;
 }
-$ts$);
+$ts$)
+on conflict (title) do nothing;
 
 insert into public.challenges (title, topic, difficulty, prompt, starter_code) values
 ('Binary Search', 'binary-search', 'easy', $md$
@@ -607,7 +625,8 @@ $md$, $ts$
 export function binarySearch(nums: number[], target: number): number {
   return -1;
 }
-$ts$);
+$ts$)
+on conflict (title) do nothing;
 
 insert into public.challenges (title, topic, difficulty, prompt, starter_code) values
 ('Median of Two Sorted Arrays', 'binary-search', 'hard', $md$
@@ -641,7 +660,8 @@ export function findMedianSortedArrays(
 ): number {
   return 0;
 }
-$ts$);
+$ts$)
+on conflict (title) do nothing;
 
 insert into public.challenges (title, topic, difficulty, prompt, starter_code) values
 ('Subsets', 'recursion-backtracking', 'medium', $md$
@@ -672,7 +692,8 @@ $md$, $ts$
 export function subsets(nums: number[]): number[][] {
   return [];
 }
-$ts$);
+$ts$)
+on conflict (title) do nothing;
 
 insert into public.challenges (title, topic, difficulty, prompt, starter_code) values
 ('N-Queens', 'recursion-backtracking', 'hard', $md$
@@ -701,7 +722,8 @@ $md$, $ts$
 export function solveNQueens(n: number): string[][] {
   return [];
 }
-$ts$);
+$ts$)
+on conflict (title) do nothing;
 
 insert into public.challenges (title, topic, difficulty, prompt, starter_code) values
 ('Climbing Stairs', 'dynamic-programming', 'easy', $md$
@@ -730,7 +752,8 @@ $md$, $ts$
 export function climbStairs(n: number): number {
   return 0;
 }
-$ts$);
+$ts$)
+on conflict (title) do nothing;
 
 insert into public.challenges (title, topic, difficulty, prompt, starter_code) values
 ('Coin Change', 'dynamic-programming', 'medium', $md$
@@ -761,7 +784,8 @@ $md$, $ts$
 export function coinChange(coins: number[], amount: number): number {
   return -1;
 }
-$ts$);
+$ts$)
+on conflict (title) do nothing;
 
 insert into public.behavioral_questions (category, question) values
 ('teamwork', $q$Tell me about a time you had to collaborate closely with someone whose working style was very different from yours. How did you make the partnership productive?$q$),
@@ -778,4 +802,5 @@ insert into public.behavioral_questions (category, question) values
 ('failure', $q$Tell me about a time you missed a commitment you had made. How did you handle it with the people counting on you?$q$),
 ('growth', $q$Tell me about a skill you deliberately set out to learn recently. How did you approach it, and how did you measure progress?$q$),
 ('growth', $q$Describe the most useful piece of feedback you have ever received. What did you do with it?$q$),
-('growth', $q$Tell me about a time you realized your initial approach to a problem was wrong. How did you course-correct?$q$);
+('growth', $q$Tell me about a time you realized your initial approach to a problem was wrong. How did you course-correct?$q$)
+on conflict (question) do nothing;

@@ -44,10 +44,7 @@ Domain and use cases never import frameworks, vendors, or IO — they are exerci
 
 ### 1. Supabase
 
-Create a project at [supabase.com](https://supabase.com), then run the two SQL files in the dashboard SQL editor (or `supabase db push` with the CLI):
-
-1. `supabase/migrations/20260827000000_initial_schema.sql`
-2. `supabase/seed.sql`
+Create a project at [supabase.com](https://supabase.com), then run the SQL files in the dashboard SQL editor (or `supabase db push` with the CLI): every file in `supabase/migrations/` in filename order, followed by `supabase/seed.sql`. The seed is idempotent — running it again never duplicates content.
 
 Email/password auth is used as provided by Supabase defaults.
 
