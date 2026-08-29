@@ -88,3 +88,13 @@ npm run dev
 
 - The Monaco editor is loaded by `@monaco-editor/react` from jsDelivr at runtime, so the challenge editor needs network access in the browser.
 - The production build succeeds with no environment variables set; configuration is read per request, never at import time.
+
+## Troubleshooting
+
+**`Cannot find native binding` from `@tailwindcss/oxide` when running the app** — npm sometimes skips platform-specific optional dependencies ([npm/cli#4828](https://github.com/npm/cli/issues/4828)), and Turbopack's persistent cache then keeps replaying the failure even after the package is restored. Fix both layers:
+
+```bash
+npm ci
+rm -rf .next
+npm run dev
+```
