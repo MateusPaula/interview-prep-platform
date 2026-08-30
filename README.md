@@ -91,7 +91,7 @@ npm run dev
 
 ## Troubleshooting
 
-**`Cannot find native binding` from `@tailwindcss/oxide` when running the app** — npm sometimes skips platform-specific optional dependencies ([npm/cli#4828](https://github.com/npm/cli/issues/4828)), and Turbopack's persistent cache then keeps replaying the failure even after the package is restored. Fix both layers:
+**`Cannot find native binding` from `@tailwindcss/oxide` when running the app** — npm sometimes skips platform-specific optional dependencies ([npm/cli#4828](https://github.com/npm/cli/issues/4828)), and Turbopack's persistent cache then keeps replaying the failure even after the package is restored. `npm run dev` and `npm run build` repair this automatically (`scripts/ensure-native-deps.mjs` reinstalls the platform binding and clears the stale `.next` cache). If the repair itself fails, fall back to:
 
 ```bash
 npm ci
