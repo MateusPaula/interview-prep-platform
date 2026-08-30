@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0a0a0f;
+  --color-surface: #141419;
+  --color-raised: #1b1b23;
+  --color-overlay: #22222c;
+  --color-line: #26262f;
+  --color-line-strong: #3a3a46;
+  --color-ink: #f0f0f5;
+  --color-ink-secondary: #a2a2b0;
+  --color-ink-muted: #71717e;
+  --color-accent: #6366f1;
+  --color-accent-strong: #7c82f5;
+  --color-accent-ink: #a5abfc;
+  --color-accent-soft: #1c1c33;
+  --color-easy: #34d399;
+  --color-medium: #fbbf24;
+  --color-hard: #f87171;
+  --color-danger: #ef4444;
+  --color-success: #34d399;
+  --color-series-latest: #7b83f2;
+  --color-series-earliest: #d0761f;
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-mono:
+    ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas,
+    "Liberation Mono", monospace;
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.25);
+  --shadow-pop: 0 4px 12px rgba(0, 0, 0, 0.5), 0 16px 40px rgba(0, 0, 0, 0.35);
+  --animate-fade-up: fade-up 0.35s ease-out both;
+  --animate-pulse-critical: pulse-critical 1s ease-in-out infinite;
+  --animate-shimmer: shimmer 1.6s linear infinite;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-critical {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: #ffffff;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-accent-strong);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line-strong) transparent;
+}
