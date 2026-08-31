@@ -1,9 +1,24 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { useEffect } from "react";
+import { isStaleBuildError } from "./stale-build";
 
-export default function LocaleError({ reset }: { reset: () => void }) {
+export default function LocaleError({
+  error,
+  reset,
+}: {
+  error: Error & { digest?: string };
+  reset: () => void;
+}) {
   const t = useTranslations("common.errorBoundary");
+
+  useEffect(() => {
+    console.error(error);
+    if (isStaleBuildError(error)) {
+      window.location.reload();
+    }
+  }, [error]);
 
   return (
     <main className="flex min-h-dvh flex-col items-center justify-center gap-4 px-6 text-center">
